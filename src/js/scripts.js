@@ -43,6 +43,8 @@ function handleSubmitBtn(event) {
   saveFullNameDateToLocalStorage();
   addFullNameToTitle();
   makeVisibleSelect();
+  const formReset = event.currentTarget;
+  formReset.reset();
 }
 
 function addFullNameToTitle() {
