@@ -22,11 +22,6 @@ const refs = {
 const submittedData = {};
 const categoryList = [];
 
-reloadPage();
-
-refs.form.addEventListener('submit', handleSubmitBtn);
-refs.select.addEventListener('change', handleSelect);
-
 function getFormNameData(event) {
   event.preventDefault();
 
@@ -125,3 +120,8 @@ function generateArticleList(cat) {
 
   return categories;
 }
+
+reloadPage();
+
+refs.form.addEventListener('submit', handleSubmitBtn);
+refs.select.addEventListener('change', handleSelect);
