@@ -58,6 +58,15 @@ function makeCategoryList() {
   });
 }
 
+// function makeCategoryList() {
+//   articles.reduce((acc, item) => {
+//     if (!categoryList.includes(item['category'])) {
+//       acc.push(item['category']);
+//     }
+//     return acc;
+//   }, []);
+// }
+
 function addSelectToHTML() {
   const select = selectTemplate(categoryList);
   refs.select.insertAdjacentHTML('beforeend', select);
