@@ -20,7 +20,7 @@ const refs = {
 };
 
 const submittedData = {};
-const categoryList = [];
+let categoryList = [];
 
 function getFormNameData(event) {
   event.preventDefault();
@@ -49,23 +49,14 @@ function addFullNameToTitle() {
   }
 }
 
-//TODO поменять на reduce
 function makeCategoryList() {
-  articles.map(item => {
-    if (!categoryList.includes(item['category'])) {
-      categoryList.push(item['category']);
+  return (categoryList = articles.reduce((acc, item) => {
+    if (!acc.includes(item['category'])) {
+      acc.push(item['category']);
     }
-  });
+    return acc;
+  }, []));
 }
-
-// function makeCategoryList() {
-//   articles.reduce((acc, item) => {
-//     if (!categoryList.includes(item['category'])) {
-//       acc.push(item['category']);
-//     }
-//     return acc;
-//   }, []);
-// }
 
 function addSelectToHTML() {
   const select = selectTemplate(categoryList);
